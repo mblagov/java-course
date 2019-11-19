@@ -6,8 +6,11 @@ import java.util.concurrent.FutureTask;
 
 public class CallableExample {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        FutureTask<List<Double>> f = new FutureTask<>(new EquationSolveCallable(1d, 2d, 1d));
+    public static void main(String[] args)
+            throws ExecutionException, InterruptedException {
+        FutureTask<List<Double>> f = new FutureTask<>(
+                new EquationSolveCallable(1d, 2d, 1d)
+        );
         Thread t = new Thread(f);
         t.start();
 
